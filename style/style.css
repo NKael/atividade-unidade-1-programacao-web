@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.light-mode {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+body.dark-mode {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.clock-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+  width: 90%;
+  max-width: 480px;
+}
+
+body.light-mode .clock-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+body.dark-mode .clock-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+}
+
+.theme-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.theme-btn:hover {
+  transform: scale(1.05);
+}
+
+.theme-btn:active {
+  transform: scale(0.95);
+}
+
+body.light-mode .theme-btn {
+  background-color: #f1f5f9;
+  color: #334155;
+}
+
+body.dark-mode .theme-btn {
+  background-color: #334155;
+  color: #f8fafc;
+}
+
+.clock-display {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.date-display {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+
+@media (max-width: 480px) {
+  .clock-display {
+    font-size: 2.8rem;
+  }
+  
+  .clock-card {
+    padding: 2rem 1.5rem;
+  }
+}
